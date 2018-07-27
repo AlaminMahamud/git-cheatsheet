@@ -14,17 +14,51 @@ create repo from scratch
 git init
 #+END_SRC
 
+* Local Changes
+Changed files in your working directory
+#+BEGIN_SRC shell
+git status
+#+END_SRC
+
+Changes to tracked files
+#+BEGIN_SRC shell
+git diff
+#+END_SRC
+
+Add all current changes to the next commit
+#+BEGIN_SRC shell
+git add .
+#+END_SRC
+
+Add some changes in <file> to the next commit
+#+BEGIN_SRC shell
+git add --patch
+#+END_SRC
+
+options for each hunk<changes>
+#+BEGIN_SRC shell
+"""
+y - stage this hunk
+n - do not stage this hunk
+q - quit; do not stage this hunk or any of the remaining ones
+a - stage this hunk and all later hunks in the file
+d - do not stage this hunk or any of the later hunks in the file
+e - manually edit the current hunk
+? - print help
+"""
+#+END_SRC
+
 * A => Cherry-picking
 * b => Branching
 * B => Bisecting
 * c => Committing
-* d => Diffing           
+* d => Diffing
 * D => Change diffs
-* e => Ediff dwimming    
+* e => Ediff dwimming
 * E => Ediffing
-* f => Fetching          
-* F => Pulling           
-* l => Logging           
+* f => Fetching
+* F => Pulling
+* l => Logging
 * L => Change logs
 * m => Merging           
 * M => Remoting          
