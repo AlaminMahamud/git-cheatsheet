@@ -48,46 +48,33 @@ e - manually edit the current hunk
 """
 #+END_SRC
 
-* A => Cherry-picking
-* b => Branching
-* B => Bisecting
-* c => Committing
-* d => Diffing
-* D => Change diffs
-* e => Ediff dwimming
-* E => Ediffing
-* f => Fetching
-* F => Pulling
-* l => Logging
-* L => Change logs
-* m => Merging           
-* M => Remoting          
-* o => Submodules        
-* O => Subtrees
-* P => Pushing           
-* r => Rebasing          
-* t => Tagging
-** Switches
- -a Annotate (--annotate)
- -f Force (--force)
- -s Sign (--sign)
-
-** Options
- =f Sign (--local-user=)
-
-** Actions
- t -- Create    
- k -- Delete    
- p -- Prune
-
-* T => Notes
-* V => Reverting         
-* w => Apply patches     
-* W => Format patches    
-* X => Resetting
-* y => Show Refs         
-* z => Stashing          
-* ! => Running           
-* % => Worktree
+* Cherry-picking [A]
+* Branching [b]
+* Bisecting [B]
+* Committing [c]
+* Diffing [d]
+* Change diffs [D]
+* Ediff dwimming [e]
+* Ediffing [E]
+* Fetching [f]
+* Pulling [F]
+* Logging [l]
+* Change logs [L]
+* Merging [m]
+* Remoting [M]
+* Submodules [o]
+* Subtrees [O]
+* Pushing [P]
+* Rebasing [r]
+* Tagging [t]
+* Notes [T]
+* Reverting [V]
+* Apply patches [w]
+* Format patches [W]
+* Resetting [X]
+* Show Refs [y]
+* Stashing [z]
+* Running [!]
+* Worktree [%]
 
 
