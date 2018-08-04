@@ -1,80 +1,147 @@
 #+TITLE: Git Cheatsheet
 #+AUTHOR: Krishna
 
-Git Commands Dissecions with Magit<Emacs Git plugin> Shortcuts
+=git= Commands Dissecions with =Magit= [Emacs Git plugin] Shortcuts
 
-* Create:
-clone existing repo
-#+BEGIN_SRC shell
-git clone ssh://user@domain.com/repo.git
-#+END_SRC
+*** Create:
+  clone existing repo
+  #+BEGIN_SRC shell
+  git clone ssh://user@domain.com/repo.git
+  #+END_SRC
 
-create repo from scratch
-#+BEGIN_SRC shell
-git init
-#+END_SRC
+  create repo from scratch
+  #+BEGIN_SRC shell
+  git init
+  #+END_SRC
 
-* Local Changes
-Changed files in your working directory
-#+BEGIN_SRC shell
-git status
-#+END_SRC
+*** Local Changes
+  Changed files in your working directory
+  #+BEGIN_SRC shell
+  git status
+  #+END_SRC
 
-Changes to tracked files
-#+BEGIN_SRC shell
-git diff
-#+END_SRC
+  Changes to tracked files
+  #+BEGIN_SRC shell
+  git diff
+  #+END_SRC
 
-Add all current changes to the next commit
-#+BEGIN_SRC shell
-git add .
-#+END_SRC
+  Add all current changes to the next commit
+  #+BEGIN_SRC shell
+  git add .
+  #+END_SRC
 
-Add some changes in <file> to the next commit
-#+BEGIN_SRC shell
-git add --patch
-#+END_SRC
+  Add some changes in <file> to the next commit
+  #+BEGIN_SRC shell
+  git add --patch
+  #+END_SRC
 
-options for each hunk<changes>
-#+BEGIN_SRC shell
-"""
-y - stage this hunk
-n - do not stage this hunk
-q - quit; do not stage this hunk or any of the remaining ones
-a - stage this hunk and all later hunks in the file
-d - do not stage this hunk or any of the later hunks in the file
-e - manually edit the current hunk
-? - print help
-"""
-#+END_SRC
+  options for each hunk<changes>
+  #+BEGIN_SRC shell
+  """
+  y - stage this hunk
+  n - do not stage this hunk
+  q - quit; do not stage this hunk or any of the remaining ones
+  a - stage this hunk and all later hunks in the file
+  d - do not stage this hunk or any of the later hunks in the file
+  e - manually edit the current hunk
+  ? - print help
+  """
+  #+END_SRC
 
-* Cherry-picking [A]
-* Branching [b]
-* Bisecting [B]
-* Committing [c]
-* Diffing [d]
-* Change diffs [D]
-* Ediff dwimming [e]
-* Ediffing [E]
-* Fetching [f]
-* Pulling [F]
-* Logging [l]
-* Change logs [L]
-* Merging [m]
-* Remoting [M]
-* Submodules [o]
-* Subtrees [O]
-* Pushing [P]
-* Rebasing [r]
-* Tagging [t]
-* Notes [T]
-* Reverting [V]
-* Apply patches [w]
-* Format patches [W]
-* Resetting [X]
-* Show Refs [y]
-* Stashing [z]
-* Running [!]
-* Worktree [%]
+*** Cherry-picking [A]
+*** Branching [b]
+*** Bisecting [B]
+*** Committing [c]
+*** Diffing [d]
+*** Change diffs [D]
+*** Ediff dwimming [e]
+*** Ediffing [E]
+*** Fetching [f]
+*** Pulling [F]
+*** Logging [l]
+*** Change logs [L]
+*** Merging [m]
+*** Remoting [M]
+*** Submodules [o]
+*** Subtrees [O]
+*** Pushing [P]
+*** Rebasing [r]
+*** Tagging [t]
+**** Command Line Ref
+  Synopsis
+  #+BEGIN_SRC shell
+    git tag [-a | -s | -u <keyid>] [-f] [-m <msg> | -F <file>] [-e]
+	    <tagname> [<commit> | <object>]
+    git tag -d <tagname>...
+    git tag [-n[<num>]] -l [--contains <commit>] [--no-contains <commit>]
+	    [--points-at <object>] [--column[=<options>] | --no-column]
+	    [--create-reflog] [--sort=<key>] [--format=<format>]
+	    [--[no-]merged [<commit>]] [<pattern>...]
+    git tag -v [--format=<format>] <tagname>...
+  #+END_SRC
+
+  Options
+  #+BEGIN_SRC shell
+	  -a, --annotate
+	      Make an unsigned, annotated tag object
+
+	  -s, --sign
+	      Make a GPG-signed tag, using the default e-mail address’s key.
+
+	  -u <keyid>, --local-user=<keyid>
+	      Make a GPG-signed tag, using the given key.
+
+	  -f, --force
+	      Replace an existing tag with the given name (instead of failing)
+
+	  -d, --delete
+	      Delete existing tags with the given names.
+
+	  -v, --verify
+	      Verify the GPG signature of the given tag names.
+
+	  -n<num>
+	      <num> specifies how many lines from the annotation, if any, are printed
+    when using -l. Implies --list.
+
+  #+END_SRC
+
+  #+BEGIN_SRC shell
+    git tag                           # list available tags
+    git tag -l v1.4.2.*               # search for specific tags
+    git tag -a v1.4 -m 'version 1.4'  # create an annotated tag
+    git tag -a v1.2 9fceb02           # tag a specific commit (if you forgot)
+    git show v1.4                     # show the tag data of a specific tag
+    git tag v1.4                      # create a lightweight tag
+    git push --tag                    # you have to explicitly push tags to remotes
+    git log --date-order \
+	--graph \
+	--tags \
+	--simplify-by-decoration \
+	--pretty=format:'%ai %h %d' # show tags with creation dates
+  #+END_SRC
+**** Magit
+***** Switches
+    -a Annotate (--annotate)
+    -f Force (--force)
+    -s Sign (--sign)
+
+***** Options
+    =f Sign (--local-user=)
+
+***** Actions
+    t -- Create    
+    k -- Delete    
+    p -- Prune
+
+*** Notes [T]
+*** Reverting [V]
+*** Apply patches [w]
+*** Format patches [W]
+*** Resetting [X]
+*** Show Refs [y]
+*** Stashing [z]
+*** Running [!]
+*** Worktree [%]
 
 
